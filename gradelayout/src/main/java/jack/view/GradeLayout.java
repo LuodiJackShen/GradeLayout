@@ -1,4 +1,4 @@
-package com.example.shenmingliang1.demo;
+package jack.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
