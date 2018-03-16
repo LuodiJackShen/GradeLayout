@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.shenmingliang1.demo.MainActivity">
+
+    <com.example.shenmingliang1.demo.GradeLayout
+        android:id="@+id/grade_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:grade_color_chosen="@android:color/black"
+        app:grade_color_unchosen="@android:color/darker_gray"
+        app:grade_ico_size="5dp"
+        app:grade_text_size="22sp"
+        app:max_grade="3"
+        app:nav_button_ico="@drawable/nav_button_icon"
+        app:nav_button_size="30dp"
+        app:nav_line_chosen_color="@android:color/black"
+        app:nav_line_unchosen_color="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GradeLayout">
+        <attr name="grade_color_chosen" format="color" />
+        <attr name="grade_color_unchosen" format="color" />
+        <attr name="grade_ico_chosen" format="reference" />
+        <attr name="grade_ico_unchosen" format="reference" />
+        <attr name="grade_ico_size" format="dimension" />
+        <attr name="grade_text_size" format="dimension" />
+        <attr name="nav_line_unchosen_color" format="color" />
+        <attr name="nav_line_chosen_color" format="color" />
+        <attr name="nav_button_ico" format="reference" />
+        <attr name="nav_button_size" format="dimension" />
+        <attr name="max_grade" format="integer" />
+        <attr name="gap" format="dimension" />
+        <attr name="grade_ico_padding" format="dimension" />
+        <attr name="nav_line_chosen_width" format="dimension" />
+        <attr name="nav_line_unchosen_width" format="dimension" />
+    </declare-styleable>
+</resources>
