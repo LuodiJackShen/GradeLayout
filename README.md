@@ -1,2 +1,2 @@
 # GradeLayout
-自定义view系列-一个可滑动选择分数或者刻度的view，简单易用，能满足大部分需求。持续更新...
+[ ![Download](https://api.bintray.com/packages/luodijackshen/gradelayout-maven/GradeLayout/images/download.svg) ](https://bintray.com/luodijackshen/gradelayout-maven/GradeLayout/_latestVersion)
