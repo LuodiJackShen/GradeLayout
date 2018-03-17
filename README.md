@@ -6,6 +6,7 @@ GradeLayout
 -------
 ![效果图](https://github.com/LuodiJackShen/GradeLayout/blob/master/image/demo1.gif)
 ![效果图](https://github.com/LuodiJackShen/GradeLayout/blob/master/image/demo2.gif)
+![效果图](https://github.com/LuodiJackShen/GradeLayout/blob/master/image/demo3.gif)
 
 目前支持更改的属性
 -------
