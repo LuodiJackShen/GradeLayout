@@ -2,10 +2,10 @@ GradeLayout
 -------
 [ ![Download](https://api.bintray.com/packages/luodijackshen/gradelayout-maven/GradeLayout/images/download.svg) ](https://bintray.com/luodijackshen/gradelayout-maven/GradeLayout/_latestVersion)
 
-效果
+效果图
 -------
-![效果图](https://github.com/LuodiJackShen/GradeLayout/tree/master/image/demo1.gif)
-![效果图](https://github.com/LuodiJackShen/GradeLayout/tree/master/image/demo2.gif)
+![效果图](https://github.com/LuodiJackShen/GradeLayout/blob/master/image/demo1.gif)
+![效果图](https://github.com/LuodiJackShen/GradeLayout/blob/master/image/demo2.gif)
 
 目前支持更改的属性
 -------
