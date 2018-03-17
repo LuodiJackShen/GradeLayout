@@ -11,6 +11,7 @@ import java.util.List;
 
 import jack.view.GradeLayout;
 
+
 public class MainActivity extends AppCompatActivity
         implements GradeLayout.OnGradeUpdateListener, View.OnClickListener {
 

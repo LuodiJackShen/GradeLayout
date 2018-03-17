@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="GradeLayout">
+        <!--刻度被选中时候的颜色-->
         <attr name="grade_color_chosen" format="color" />
+        <!--刻度未被选中时候的颜色-->
         <attr name="grade_color_unchosen" format="color" />
+        <!--刻度被选中后刻度的图标-->
         <attr name="grade_ico_chosen" format="reference" />
+        <!--刻度未被选中时刻度的图标-->
         <attr name="grade_ico_unchosen" format="reference" />
+        <!--刻度图标的宽高-->
         <attr name="grade_ico_size" format="dimension" />
+        <!--刻度文字大小-->
         <attr name="grade_text_size" format="dimension" />
+        <!--导航线未被选中部分的颜色-->
         <attr name="nav_line_unchosen_color" format="color" />
+        <!--导航线被选中部分的颜色-->
         <attr name="nav_line_chosen_color" format="color" />
+        <!--导航button的背景图片-->
         <attr name="nav_button_ico" format="reference" />
+        <!--导航button的宽高-->
         <attr name="nav_button_size" format="dimension" />
+        <!--刻度的数量-->
         <attr name="max_grade" format="integer" />
+        <!--刻度图标和导航线之间的距离-->
         <attr name="gap" format="dimension" />
+        <!--刻度图标和刻度文字之间的距离-->
         <attr name="grade_ico_padding" format="dimension" />
+        <!--导航线被选中部分的宽度-->
         <attr name="nav_line_chosen_width" format="dimension" />
+        <!--导航线未被选中部分的宽度-->
         <attr name="nav_line_unchosen_width" format="dimension" />
     </declare-styleable>
 </resources>

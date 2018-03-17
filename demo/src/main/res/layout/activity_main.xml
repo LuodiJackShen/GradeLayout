@@ -13,7 +13,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        app:max_grade="3" />
+        app:grade_color_chosen="@android:color/holo_red_light"
+        app:grade_color_unchosen="@android:color/black"
+        app:max_grade="3"
+        app:nav_line_chosen_color="@android:color/holo_red_light"
+        app:nav_line_chosen_width="6dp"
+        app:nav_line_unchosen_color="@android:color/black"
+        app:nav_line_unchosen_width="3dp" />
+
 
     <Button
         android:id="@+id/change_chosen_item_btn"
