@@ -4,8 +4,8 @@ GradeLayout
 
 效果
 -------
-![image](https://github.com/LuodiJackShen/GradeLayout/tree/master/image/demo1.gif)
-![image](https://github.com/LuodiJackShen/GradeLayout/tree/master/image/demo2.gif)
+![效果图](https://github.com/LuodiJackShen/GradeLayout/tree/master/image/demo1.gif)
+![效果图](https://github.com/LuodiJackShen/GradeLayout/tree/master/image/demo2.gif)
 
 目前支持更改的属性
 -------
@@ -62,7 +62,8 @@ GradeLayout
 最后
 -------
 欢迎在issue中批评指教，欢迎star，欢迎访问<a href="http://blog.csdn.net/a199581" target="_blank"> [我的博客]. 
-另：本人是全宇宙中最菜的android开发者，但是我有一个称谓架构师的梦。</br>
+
+另：本人是全宇宙中最菜的android开发者，但是我有一个称谓架构师的梦。
 
 License
 -------
