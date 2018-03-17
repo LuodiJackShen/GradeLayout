@@ -1,1 +1,1 @@
-include ':app', ':gradelayout'
+include ':app', ':gradelayout', ':demo'
