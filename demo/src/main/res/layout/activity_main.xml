@@ -15,7 +15,7 @@
         android:layout_marginRight="20dp"
         app:grade_color_chosen="@android:color/holo_red_light"
         app:grade_color_unchosen="@android:color/black"
-        app:max_grade="3"
+        app:max_grade="10"
         app:nav_line_chosen_color="@android:color/holo_red_light"
         app:nav_line_chosen_width="6dp"
         app:nav_line_unchosen_color="@android:color/black"
@@ -24,6 +24,12 @@
 
     <Button
         android:id="@+id/change_chosen_item_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="改变选中的分数" />
+
+    <Button
+        android:id="@+id/change_grade2_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="改变选中的分数" />

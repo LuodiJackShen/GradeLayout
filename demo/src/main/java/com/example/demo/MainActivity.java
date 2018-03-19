@@ -23,10 +23,13 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         mGradeLy = findViewById(R.id.grade_ly);
         mGradeLy.setOnGradeUpdateListener(this);
+        mGradeLy.setChosenGrade("5");
         Button changeGradeBtn = findViewById(R.id.change_grade_btn);
         changeGradeBtn.setOnClickListener(this);
         Button changeChosenItemBtn = findViewById(R.id.change_chosen_item_btn);
         changeChosenItemBtn.setOnClickListener(this);
+        Button change2Btn = findViewById(R.id.change_grade2_btn);
+        change2Btn.setOnClickListener(this);
     }
 
     @Override
@@ -44,10 +47,20 @@ public class MainActivity extends AppCompatActivity
                 list.add("100");
                 list.add("200");
                 list.add("300");
+                list.add("400");
+                list.add("500");
+                list.add("600");
+                list.add("700");
+                list.add("800");
+                list.add("900");
+                list.add("1000");
                 mGradeLy.setGradeTexts(list);
                 break;
             case R.id.change_chosen_item_btn:
-                mGradeLy.setChosenGrade(1);
+                mGradeLy.setChosenGrade("3");
+                break;
+            case R.id.change_grade2_btn:
+                mGradeLy.setChosenGrade("9");
                 break;
             default:
                 break;

@@ -48,6 +48,7 @@ public class GradeLayout extends LinearLayout implements View.OnTouchListener {
     private Drawable mGradeChosenIco;
     private Drawable mGradeUnchosenIco;
     private TextView mLastChosenTv;
+    private TextView mNowChosenTv;
     private LayoutParams mPullButtonParams;
 
     private OnGradeUpdateListener mListener;
@@ -147,6 +148,7 @@ public class GradeLayout extends LinearLayout implements View.OnTouchListener {
         mLastChosenTv = mTextViews.get(0);
         mLastChosenTv.setTextColor(mGradeChosenColor);
         mLastChosenTv.setCompoundDrawables(null, null, null, mGradeChosenIco);
+        mNowChosenTv = mLastChosenTv;
     }
 
     @Override
@@ -166,15 +168,16 @@ public class GradeLayout extends LinearLayout implements View.OnTouchListener {
         canvas.drawCircle(startX, startY, mNavLineChosenWidth / 2, mChosenPaint);
         canvas.drawCircle(grayEndX, startY, mNavLineUnchosenWidth / 2, mUnchosenPaint);
 
-
         if (isFirstDraw) {
             isFirstDraw = false;
-            mExtraLeftMargin = startX - mPullButton.getRight() / 2;
-            mPullButtonParams.leftMargin = mExtraLeftMargin;
-            mPullButton.requestLayout();
-
             MAX_LEFT_MARGIN = last.getLeft() + mExtraLeftMargin;
+            mExtraLeftMargin = startX - mPullButton.getRight() / 2;
+            mPullButtonParams.leftMargin = mExtraLeftMargin
+                    + mNowChosenTv.getLeft()
+                    + (mNowChosenTv.getRight() - mNowChosenTv.getRight()) / 2;
+            mPullButton.requestLayout();
         }
+
     }
 
     private int mLastX = 0;
@@ -267,11 +270,11 @@ public class GradeLayout extends LinearLayout implements View.OnTouchListener {
         mLastChosenTv.setCompoundDrawables(null, null, null, mGradeUnchosenIco);
         mLastChosenTv = mTextViews.get(index);
 
-        TextView nowChosenTv = mTextViews.get(index);
-        nowChosenTv.setTextColor(mGradeChosenColor);
-        nowChosenTv.setCompoundDrawables(null, null, null, mGradeChosenIco);
+        mNowChosenTv = mTextViews.get(index);
+        mNowChosenTv.setTextColor(mGradeChosenColor);
+        mNowChosenTv.setCompoundDrawables(null, null, null, mGradeChosenIco);
 
-        mPullButtonParams.leftMargin = nowChosenTv.getLeft() + mExtraLeftMargin;
+        mPullButtonParams.leftMargin = mNowChosenTv.getLeft() + mExtraLeftMargin;
         mPullButton.requestLayout();
     }
 
@@ -302,6 +305,7 @@ public class GradeLayout extends LinearLayout implements View.OnTouchListener {
     }
 
     /***
+     * 通过分数的index来设置被选中的分数
      * @param index the index of grade(from 0).
      */
     public void setChosenGrade(int index) {
@@ -314,6 +318,19 @@ public class GradeLayout extends LinearLayout implements View.OnTouchListener {
         String grade = mTextViews.get(index).getText().toString();
         notifyGradeHasChanged(grade);
 
+    }
+
+    /***
+     * 通过具体的分数设置被选中的分数
+     * @param grade 具体的分数
+     */
+    public void setChosenGrade(String grade) {
+        for (int i = 0; i < mGradeTexts.size(); i++) {
+            if (mGradeTexts.get(i).equals(grade)) {
+                setChosenGrade(i);
+                break;
+            }
+        }
     }
 
     private void notifyGradeHasChanged(String grade) {
