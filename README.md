@@ -48,7 +48,7 @@ GradeLayout
 -------
 1.  加入下面的依赖
 ```xml
-        compile 'jack.view:gradelayout:1.0'
+        compile 'jack.view:gradelayout:1.0.1'
 ```
       
 2.  在布局文件里引入
