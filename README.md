@@ -5,8 +5,8 @@ GradeLayout
 效果图
 -------
 ![效果图](https://github.com/LuodiJackShen/GradeLayout/blob/master/image/demo1.gif)
-![效果图](https://github.com/LuodiJackShen/GradeLayout/blob/master/image/demo2.gif)
 ![效果图](https://github.com/LuodiJackShen/GradeLayout/blob/master/image/demo3.gif)
+![效果图](https://github.com/LuodiJackShen/GradeLayout/blob/master/image/demo4.gif)
 
 目前支持更改的属性
 -------
@@ -42,13 +42,15 @@ GradeLayout
         <attr name="nav_line_chosen_width" format="dimension" />
         <!--导航线未被选中部分的宽度-->
         <attr name="nav_line_unchosen_width" format="dimension" />
+		<!--是否自动对齐到刻度，即是否将分数类型从int变成double，默认是true-->
+        <attr name="auto_align" format="boolean" />
 ```
 
 使用
 -------
 1.  加入下面的依赖
 ```xml
-        compile 'jack.view:gradelayout:1.0.1'
+        compile 'jack.view:gradelayout:1.0.2'
 ```
       
 2.  在布局文件里引入
