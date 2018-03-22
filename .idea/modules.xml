@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GradeLayout.iml" filepath="$PROJECT_DIR$/GradeLayout.iml" />
+      <module fileurl="file://C:\Users\shenmingliang1\AndroidStudioProjects\GradeLayout\GradeLayout.iml" filepath="C:\Users\shenmingliang1\AndroidStudioProjects\GradeLayout\GradeLayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gradelayout/gradelayout.iml" filepath="$PROJECT_DIR$/gradelayout/gradelayout.iml" />
+      <module fileurl="file://C:\Users\shenmingliang1\AndroidStudioProjects\GradeLayout\gradelayout\gradelayout.iml" filepath="C:\Users\shenmingliang1\AndroidStudioProjects\GradeLayout\gradelayout\gradelayout.iml" />
     </modules>
   </component>
 </project>

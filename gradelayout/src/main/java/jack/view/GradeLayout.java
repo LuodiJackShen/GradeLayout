@@ -1,6 +1,7 @@
 package jack.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -72,6 +73,7 @@ public class GradeLayout extends LinearLayout implements View.OnTouchListener {
     private boolean isFirstDraw = true;
     private int mExtraLeftMargin = 0;
     private float mGap;
+    private boolean isAutoAlign = true;
 
     public GradeLayout(Context context) {
         this(context, null);
@@ -196,8 +198,8 @@ public class GradeLayout extends LinearLayout implements View.OnTouchListener {
                 if (mPullButtonParams.leftMargin < mExtraLeftMargin) {
                     mPullButtonParams.leftMargin = mExtraLeftMargin;
                 }
-                if (mPullButtonParams.leftMargin > MAX_LEFT_MARGIN) {
-                    mPullButtonParams.leftMargin = MAX_LEFT_MARGIN;
+                if (mPullButtonParams.leftMargin > MAX_LEFT_MARGIN + mExtraLeftMargin) {
+                    mPullButtonParams.leftMargin = MAX_LEFT_MARGIN + mExtraLeftMargin;
                 }
                 mPullButton.requestLayout();
                 mLastX = x;
@@ -205,11 +207,34 @@ public class GradeLayout extends LinearLayout implements View.OnTouchListener {
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
                 int nowMargin = mPullButtonParams.leftMargin;
-                //根据mPullButtonParams的leftMargin来计算出当前分数的index。
-                int index = (nowMargin * (mMaxGrade - 1) * 2 + MAX_LEFT_MARGIN)
-                        / (2 * MAX_LEFT_MARGIN) + 1;
-                updateUI(index - 1);
-                notifyGradeHasChanged(mTextViews.get(index - 1).getText().toString());
+                if (isAutoAlign) {
+                    //根据mPullButtonParams的leftMargin来计算出当前分数的index。
+                    int index = (nowMargin * (mMaxGrade - 1) * 2 + MAX_LEFT_MARGIN)
+                            / (2 * MAX_LEFT_MARGIN) + 1;
+                    updateUI(index - 1);
+                    notifyGradeHasChanged(mTextViews.get(index - 1).getText().toString());
+                } else {
+                    try {
+                        double gF = Double.valueOf(mGradeTexts.get(0));
+                        double gL = Double.valueOf(mGradeTexts.get(mGradeTexts.size() - 1));
+                        double wholeGrade = gL - gF;
+                        TextView tF = mTextViews.get(0);
+                        TextView tL = mTextViews.get(mTextViews.size() - 1);
+                        double start = (tF.getRight() - tF.getLeft()) / 2 + tF.getLeft();
+                        double end = (tL.getRight() - tL.getLeft()) / 2 + tL.getLeft();
+                        double wholeGap = end - start;
+                        double btnEnd = (mPullButton.getRight() - mPullButton.getLeft()) / 2
+                                + mPullButton.getLeft();
+                        double deltaGap = btnEnd - start;
+
+                        notifyGradeHasChanged(String.valueOf(deltaGap * wholeGrade / wholeGap + gF));
+
+                    } catch (NumberFormatException e) {
+                        throw new IllegalArgumentException("If you set auto_align=true," +
+                                "the \"grade\" must can be transformed into \"Double\".");
+                    }
+                }
+
                 break;
             default:
                 break;
@@ -262,6 +287,7 @@ public class GradeLayout extends LinearLayout implements View.OnTouchListener {
                 dip2px(context, DEFAULT_NAV_LINE_UNCHOSEN_WIDTH));
         mGradeTextSize = ta.getDimension(R.styleable.GradeLayout_grade_text_size,
                 dip2px(context, DEFAULT_GRADE_TEXT_SIZE));
+        isAutoAlign = ta.getBoolean(R.styleable.GradeLayout_auto_align, true);
         ta.recycle();
     }
 

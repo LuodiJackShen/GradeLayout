@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        app:auto_align="false"
         app:grade_color_chosen="@android:color/holo_red_light"
         app:grade_color_unchosen="@android:color/black"
         app:max_grade="10"

@@ -31,5 +31,7 @@
         <attr name="nav_line_chosen_width" format="dimension" />
         <!--导航线未被选中部分的宽度-->
         <attr name="nav_line_unchosen_width" format="dimension" />
+        <!--是否自动对齐到刻度，即是否显示小数（要求分数为可转变成分数的string类型）-->
+        <attr name="auto_align" format="boolean" />
     </declare-styleable>
 </resources>
